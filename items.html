@@ -48,7 +48,7 @@
       var Items= d3.select('#items').data(data);
         data[0].forEach(function(d, j){
         Items.append('div').attr('class','col-2');
-          var card= Items.append('div').attr('class','col-6 ').style('text-align','center')
+          var card= Items.append('div').attr('class','col-4').style('text-align','center')
             .style('margin-bottom','10px')
             card.append('div').attr('class','card-header')
             .append('h5').text(d["o:id"]); 
