@@ -30,28 +30,22 @@
         <div id="items"></div>
 
         <script type="text/javascript">
-            let url ='https://polemika.univ-paris8.fr/omk/api/items?item_set_id=2';
-             var csv_data;          
+            function getData()
+                {
+                    let url ='https://polemika.univ-paris8.fr/omk/api/items?item_set_id=2';
+                var csv_data;          
                 var q = d3.queue()
                     .defer(d3.json, url)
                     .awaitAll(function(error, results) {
                         if (error) throw error;
                         csv_data=results;
                         console.log(csv_data);
-                        localStorage.clear();
-                        setData(results,false);
+
+                        showItems(results);
 
                     });
-               function showItems(data) {
-    
-                    
-
                 }
-            
-            function getData(data) {
-            
-            
-            }
+               
             
             
       
