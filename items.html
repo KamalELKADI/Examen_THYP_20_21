@@ -45,34 +45,23 @@
     }
     function showItems(data)
     {
-
-
-
-        var Items= d3.select('#items')
-        .data(data);
-        
+      var Items= d3.select('#items').data(data);
         data[0].forEach(function(d, j){
-            console.log(d["o:id"]);
-            Items.append('div').attr('class','col-2');
-          var card =  Items
-            .append('div').attr('class','justify-content-center d-inline-block')
-            .style('margin', '30px').append('div')
-	    .attr('class', 'card border-dark mb-3 text-center')
-	    .style('width', '21rem')
+        Items.append('div').attr('class','col-2');
+          var card= Items.append('div').attr('class','col-8 ').style('text-align','center')
+            .style('margin-bottom','10px')
             card.append('div').attr('class','card-header')
-        .append('h5').text('Identifiant : '+d["o:id"]); 
+            .append('h5').text(d["o:id"]); 
 
-d3.queue()
-        .defer(d3.json, d["o:media"][0]['@id'])
-        .awaitAll(function(error, results) {
+          d3.queue().defer(d3.json, d["o:media"][0]['@id'])
+            .awaitAll(function(error, results) {
             if (error) throw error;
             csv_data=results;
             
-           var body=card.append('div').attr('class','card-body');
-           body .append('h4').attr('class','card-title')
-        .text(d["o:title"]);
-        body .append("img")
-        .attr('src', csv_data[0]['o:thumbnail_urls']['large']);
+           var front = card.append('div').attr('class','card-body');
+               front.append('h4').attr('class','card-title').text(d["o:title"]);
+               front .append("img")
+               .attr('src', csv_data[0]['o:thumbnail_urls']['large']);
             
         });
 
