@@ -23,13 +23,13 @@ news:hasNews a rdf:Property ;
     rdfs:label "hasNews" ;
     rdfs:comment "L'article est créé par cette personne" ;
     rdfs:domain o:Resource ;
-    rdfs:isDefinedBy you: . 
+    rdfs:isDefinedBy news: . 
     
 news:hasAuteur a rdf:Property ;
     rdfs:label "hasAuteur" ;
     rdfs:comment "L'auteur de cet article" ;
     rdfs:domain o:Resource ;
-    rdfs:isDefinedBy you: .
+    rdfs:isDefinedBy news: .
     
 
 news:News a rdfs:Class ;
@@ -42,8 +42,5 @@ news:Titre a rdf:Property ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
     
-news:Description a rdf:Property ;
-    rdfs:label "Description" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .    
+  
 
