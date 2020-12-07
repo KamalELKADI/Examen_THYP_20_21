@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix o: <http://omeka.org/s/vocabs/o#> .
-@prefix news: <https://hichem-ben-ameur.github.io/Examen/vocab.ttl> .
+@prefix news: <https://kamalelkadi.github.io/Examen_THYP_20_21/vocab.ttl> .
 
 
 <https://kamalelkadi.github.io/Examen_THYP_20_21/vocab.ttl> a owl:Ontology ;
