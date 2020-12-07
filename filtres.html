@@ -20,7 +20,12 @@
                 <h2> Listes D'item </h2>
             </div>
             <hr>
-           
+		<div class="col-4">
+		    <select class="custom-select" id="menu" onchange="AfficherMenu()"> 
+			<option value=""></option>
+		      </select>
+		</div>
+           <hr>
 
         
         </div>
@@ -43,6 +48,18 @@
 
 		});
 	    }
+		
+	function showFiltreItems()
+	{
+		var liste=document.getElementById('menu');
+		new_data=data[0].filter(function(d){return d['dcterms:subject'][0]['@value'] == liste.value;});
+
+		console.log(new_data);
+
+		showItems(new_data);
+
+
+	}	
     function showItems(data)
     {
       var Items= d3.select('#items').data(data);
