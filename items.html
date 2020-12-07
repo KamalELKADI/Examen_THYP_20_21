@@ -48,19 +48,19 @@
 
 
 
-        var infoItems= d3.select('#items')
+        var Items= d3.select('#items')
         .data(data);
         
         data[0].forEach(function(d, j){
             console.log(d["o:id"]);
-            infoItems.append('div').attr('class','col-2');
-          var card=  infoItems
-            .append('div').attr('class','col-8 ')
-            .style('text-align','center')
-            .style('margin-bottom','10px')
-            .append('div').attr('class','card shadow-none p-3 mb-5 bg-light rounded')
+            Items.append('div').attr('class','col-2');
+          var card =  Items
+            .append('div').attr('class','justify-content-center d-inline-block')
+            .style('margin', '30px').append('div')
+	    .attr('class', 'card border-dark mb-3 text-center')
+	    .style('width', '21rem')
             card.append('div').attr('class','card-header')
-        .append('h3').text('Identifiant : '+d["o:id"]); 
+        .append('h5').text('Identifiant : '+d["o:id"]); 
 
 d3.queue()
         .defer(d3.json, d["o:media"][0]['@id'])
